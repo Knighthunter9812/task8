@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+</head>
+<body>
+
+
+<h2>Prediction Model</h2>
+
+<p>Enter the data:</p>
+
+<form action="{{ url_for('predict')}}"method="post">
+
+    <p>ENTER THE AGE:</p>
+    <input type="number" id="age" name="age"><br><br>
+
+    <p>ENTER THE GENDER:</p>
+    <input type="radio" id="male" name="gender" value="1">
+    <label for="male">Male</label>&nbsp;
+    <input type="radio" id="female" name="gender" value="0">
+    <label for="female">Female</label><br><br>
+
+    <P>ENTER THE BLOOD GROUP:</P>
+    <input type="radio" id="A+" name="blood group" value="0">
+    <label for="A+">A+</label>&nbsp;&nbsp;
+
+    <input type="radio" id="A-" name="blood group" value="1">
+    <label for="A-">A-</label>&nbsp;&nbsp;
+
+    <input type="radio" id="AB+" name="blood group" value="2">
+    <label for="AB+">AB+</label>&nbsp;&nbsp;
+
+    <input type="radio" id="AB-" name="blood group" value="3">
+    <label for="AB-">AB-</label>&nbsp;&nbsp;
+
+    <input type="radio" id="B+" name="blood group" value="4">
+    <label for="B+">B+</label>&nbsp;&nbsp;
+
+    <input type="radio" id="B-" name="blood group" value="5">
+    <label for="B-">B-</label>&nbsp;
+
+    <input type="radio" id="O+" name="blood group" value="6">
+    <label for="O+">O+</label>&nbsp;
+
+    <input type="radio" id="O-" name="blood group" value="7">
+    <label for="O-">O-</label><br><br>
+
+    <p>CHOOSE MEDICAL CONDITION:</p>
+
+    <input type="radio" id="Arthritis" name="medical condition" value="0">
+    <label for="Arthritis">Arthritis</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Asthma" name="medical condition" value="1">
+    <label for="Asthma">Asthma</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Cancer" name="medical condition" value="2">
+    <label for="Cancer">Cancer</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Diabetes" name="medical condition" value="3">
+    <label for="Diabetes">Diabetes</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Hypertension" name="medical condition" value="4">
+    <label for="Hypertension">Hypertension</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Obesity" name="medical condition" value="5">
+    <label for="Obesity">Obesity</label><br><br>
+
+    <p>CHOOSE INSURANCE PROVIDER:</p>
+
+    <input type="radio" id="Aetna" name="insurance provider" value="0">
+    <label for="Aetna">Aetna</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Blue Cross" name="insurance provider" value="1">
+    <label for="Blue Cross">Blue Cross</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Cigna" name="insurance provider" value="2">
+    <label for="Cigna">Cigna</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Medicare" name="insurance provider" value="3">
+    <label for="Medicare">Medicare</label>&nbsp;&nbsp;
+
+    <input type="radio" id="UnitedHealthcare" name="insurance provider" value="4">
+    <label for="UnitedHealthcare">UnitedHealthcare</label><br><br>
+
+    <p>Choose ADMISSION TYPE:</p>
+
+    <input type="radio" id="Elective" name="admission type" value="0">
+    <label for="Elective">Elective</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Emergency" name="admission type" value="1">
+    <label for="Emergency">Emergency</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Urgent" name="admission type" value="2">
+    <label for="Urgent">Urgent</label>&nbsp;<br><br>
+
+    <p>CHOOSE MEDICATION:</p>
+
+    <input type="radio" id="Aspirin" name="medication" value="0">
+    <label for="Aspirin">Aspirin</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Ibuprofen" name="medication" value="1">
+    <label for="Ibuprofen">Ibuprofen</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Lipitor" name="medication" value="2">
+    <label for="Lipitor">Lipitor</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Paracetamol" name="medication" value="3">
+    <label for="Paracetamol">Paracetamol</label>&nbsp;&nbsp;
+
+    <input type="radio" id="Penicillin" name="medication" value="4">
+    <label for="Penicillin">Penicillin</label><br><br>&nbsp;
+
+    <input type="submit" value="Predict">
+
+    <pre>
+        "0" implies Abnormal
+        "1" implies Inconclusive
+        "2" implies Normal
+        CHECK YOUR RESULT BELOW>>>
+    </pre>
+
+    <br><br>
+
+    {{ prediction_text }}
+
+
+
+
+</form>
+
+</body>
+</html>
+
+
+
+
